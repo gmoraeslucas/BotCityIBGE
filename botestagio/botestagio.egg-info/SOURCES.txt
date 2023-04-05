@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+VERSION
+requirements.txt
+setup.py
+botestagio/__init__.py
+botestagio/__main__.py
+botestagio/bot.py
+botestagio.egg-info/PKG-INFO
+botestagio.egg-info/SOURCES.txt
+botestagio.egg-info/dependency_links.txt
+botestagio.egg-info/requires.txt
+botestagio.egg-info/top_level.txt
+botestagio/resources/start.png
