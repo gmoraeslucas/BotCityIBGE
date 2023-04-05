@@ -103,34 +103,29 @@ class Bot(DesktopBot):
 
 
 def enviar_email():
-    # Carregue o arquivo Excel em um DataFrame do pandas
-    df = pd.read_excel('C:\\Users\\luque\\PycharmProjects\\pythonProject\\botestagio\\botestagio\\ListaEstados.xlsx')
 
-    # Configure as informações do email
-    de_email = 'luqueta04@gmail.com'
-    para_email = 'luqueta04@gmail.com'
-    senha = 'mjdzclypgeqoahlc'
+    df = pd.read_excel('')
+
+    de_email = ''
+    para_email = ''
+    senha = ''
     assunto = 'Arquivo Excel'
     mensagem = 'Segue em anexo o arquivo Excel'
 
-    # Crie um objeto MIMEMultipart para representar o email
     msg = MIMEMultipart()
     msg['From'] = de_email
     msg['To'] = para_email
     msg['Subject'] = assunto
 
-    # Adicione o corpo do email
     msg.attach(MIMEText(mensagem, 'plain'))
 
-    # Adicione o anexo
-    arquivo = 'C:\\Users\\luque\\PycharmProjects\\pythonProject\\botestagio\\botestagio\\ListaEstados.xlsx'
+    arquivo = ''
     part = MIMEBase('application', 'octet-stream')
     part.set_payload(open(arquivo, 'rb').read())
     encoders.encode_base64(part)
     part.add_header('Content-Disposition', f'attachment; filename="{arquivo}"')
     msg.attach(part)
 
-    # Envie o email usando o servidor SMTP do Gmail
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     server = smtplib.SMTP(smtp_server, smtp_port)
